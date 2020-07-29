@@ -1,7 +1,6 @@
 {
   "name": "message_teacher",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "dependencies": {
     "ejs": "^3.1.3",
@@ -14,5 +13,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/queenzx/message_teacher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/queenzx/message_teacher/issues"
+  },
+  "homepage": "https://github.com/queenzx/message_teacher#readme",
+  "description": ""
 }
