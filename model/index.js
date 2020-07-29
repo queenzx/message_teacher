@@ -117,7 +117,7 @@ function find(model,filter,opt,callback){
 }
 
 module.exports = {
-    ...require("./models.js"),
+    ...require("./models.js"),//...扩展运算符,相当于: Message:require("./models.js").Message
     add,
     del,
     modify,
