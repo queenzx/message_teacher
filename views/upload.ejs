@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>编辑</title>
+</head>
+<body>
+    <form action="/message/update" method="post">
+        <input type="hidden" name="id" value="<%= docs._id %>">
+        用户名:&nbsp;&nbsp;<span><%= docs.username %></span><br><br>
+        留言内容:&nbsp;<textarea name="con"><%= docs.con  %>></textarea><br><br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

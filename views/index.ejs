@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内部小论坛</title>
+    <style>
+        .out{
+            border:1px solid red;
+            background:skyblue;
+        }
+    </style>
+</head>
+<body>
+    <form action="/message/tijiao" method="post">
+        姓名: <input type="text" name="username"><br><br>
+        留言: <textarea name="message"></textarea><br><br>
+        <input type="submit" value="提交">
+    </form> 
+    <hr>
+    <% for(var i=0;i< msg.length;i++){ %>
+    <div class="out">
+        <div><b><%= msg[i].username %></b>说:</div>
+        <div><%= msg[i].message %></div>
+        <div><%= msg[i].date %></div>
+        <div>
+            <a href="#">编辑</a>&nbsp;&nbsp;&nbsp;
+            <a href="#">删除</a>
+        </div>
+    </div>
+    <% } %>
+</body>
+</html>
