@@ -116,10 +116,22 @@ function find(model,filter,opt,callback){
     });
 }
 
+/**
+ * 统计所有数据的条数
+ * @param {*} model 查询的集合
+ * @param {Function} callback 回调函数
+ */
+function total(model,callback){
+    model.countDocuments(function(err,count){
+        callback(err,count);
+    });
+}
+
 module.exports = {
     ...require("./models.js"),//...扩展运算符,相当于: Message:require("./models.js").Message
     add,
     del,
     modify,
-    find
+    find,
+    total
 }   
