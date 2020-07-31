@@ -54,10 +54,11 @@
 <body>
 	<h1>留言吧</h1>
 	<form action="/message/tijiao" method="post" onsubmit="">
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<label for="username">姓名：</label>
 			<input type="text" name="username" id="username" class="form-control">
-		</div>
+		</div> -->
+		<h1><%= username %></h1>
 		<div class="form-group">
 			<label for="message">留言：</label>
 			<textarea name="message" rows="4" class="form-control" id="message"></textarea>
