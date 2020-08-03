@@ -4,6 +4,7 @@ const Route = express.Router();
 const db = require('../model');
 const sd = require('silly-datetime');
 const Message = db.Message;
+const User = db.User;
 
 // /message请求
 Route.get('/',function(req,res){
@@ -40,9 +41,33 @@ Route.get('/',function(req,res){
                 return ;
             }
             // console.log(docs);
-            // 取到数据,传递给页面
-            // 传递的数据:留言信息,总页数,当前页,登录的用户名
+            // 获取所有用户的基本信息
+            // 查询的属性
+            var fields = "username nickname avatar";
+            User.find({},fields,function(err,users){
+                if(err){
+                    console.log(err);
+                    res.render('error',{errMsg:"获取用户信息失败"});
+                    return ;
+                }
+                // console.log(user);
+                // 取到数据,传递给页面
+                // 传递的数据:留言信息,总页数,当前页,登录的用户名
+                var data = {
+                    msg: docs,
+                    pages:allPages,
+                    current:page,
+                    username:username,
+                    users:users
+                };
+                res.render('index',data);
+            });
+            // 可以使用自己封装的db.find的方法
+            /* db.find(User,function(err,users){
+               // 取到数据,传递给页面
+                // 传递的数据:留言信息,总页数,当前页,登录的用户名
             res.render('index',{msg:docs,pages:allPages,current:page,username:username});
+            })  */
         });
     });
 });
