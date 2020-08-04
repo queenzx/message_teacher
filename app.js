@@ -16,6 +16,8 @@ app.use(session({
 app.use(express.urlencoded({extended:true}));
 
 app.use(express.static("./public"));
+app.use(express.static("./temp"));
+app.use(express.static("./avatars"));
 
 // 访问 / 请求
 app.get('/',function(req,res){
